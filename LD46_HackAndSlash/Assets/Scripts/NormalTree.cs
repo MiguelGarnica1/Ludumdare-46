@@ -12,6 +12,11 @@ public class NormalTree : Enemy
 
     public override void Attack(float damage)
     {
+        //ChangeColor();
+    }
+
+    public override void GetDamaged(float damage)
+    {
         ChangeColor();
     }
 }
