@@ -5,17 +5,19 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     public int fuel;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int burnRate;
+    private float timer;
 
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+
+        if (timer > burnRate)
+        {
+            fuel--;
+            timer = 0;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

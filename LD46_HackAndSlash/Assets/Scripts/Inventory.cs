@@ -5,19 +5,24 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public int inventory;
+    public float throwRate;
     public Transform dropPoint;
     public GameObject woodPrefab;
     public KeyCode drop;
+    private float timer;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(drop))
+        timer += Time.deltaTime;
+
+        if (Input.GetKey(drop) && timer > throwRate)
         {
             if (inventory >= 1)
             {
-                Instantiate(woodPrefab, dropPoint.position, dropPoint.rotation);
+                Instantiate(woodPrefab, dropPoint.position, Quaternion.identity);
                 inventory--;
+                timer = 0;
             }
         }
     }

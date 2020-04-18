@@ -167,7 +167,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &8940495068982705688
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -213,7 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7469e329d76e74db60ce26a92b5626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: 0
+  inventory: 1
+  throwRate: 0.5
   dropPoint: {fileID: 8940495067894591406}
   woodPrefab: {fileID: 7783095943077492136, guid: 87dce6b2eb0da314298295b315bedc29,
     type: 3}
