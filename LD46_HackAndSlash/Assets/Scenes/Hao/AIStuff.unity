@@ -416,7 +416,7 @@ MonoBehaviour:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     count: 20
     rate: 2
-  timeBetweenWaves: 5
+  timeBetweenWaves: 2
   waveCountDown: 0
 --- !u!4 &2058266713
 Transform:
