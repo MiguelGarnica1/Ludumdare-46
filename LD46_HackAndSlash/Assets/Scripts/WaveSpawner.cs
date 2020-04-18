@@ -18,7 +18,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] spawnPoint;
     public SpawnState state = SpawnState.COUNTING;
     public Wave[] waves; 
-    public static int numOfEnemy; //The total number of enemy
+    public static int numOfEnemy; //The total number of enemy   
     private int currentWave; //The current wave level
 
     public float timeBetweenWaves = 5f;
@@ -38,12 +38,17 @@ public class WaveSpawner : MonoBehaviour
             {
                 WaveCompleted();
             }
+            else
+            {
+                return;
+            }
         }
 
         //When countdown reach 0, start spawning
         if (waveCountDown <= 0 && state != SpawnState.SPAWNING)
         {
-            StartCoroutine(SpawnWave(waves[currentWave])); 
+            StartCoroutine(SpawnWave(waves[currentWave]));
+             
         }
         else //Start the countdown
         {
@@ -59,7 +64,7 @@ public class WaveSpawner : MonoBehaviour
         for (int i = 0; i < _wave.count; i++)
         {
             //Spawn Enemy randomly from the list of enemy
-            SpawnEnemy(_wave.enemy[(int)Random.Range(0,_wave.enemy.Length)]);
+            SpawnEnemy(_wave.enemy[Random.Range(0, _wave.enemy.Length)]);
             Debug.Log("num of enemies: "+numOfEnemy);
             yield return new WaitForSeconds(1f/_wave.rate);
         }
