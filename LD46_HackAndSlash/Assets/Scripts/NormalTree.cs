@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class NormalTree : Enemy
 {
+    public GameObject woodPrefab;
+
     public override void Die()
     {
+        Instantiate(woodPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
         WaveSpawner.numOfEnemy--;
     }
