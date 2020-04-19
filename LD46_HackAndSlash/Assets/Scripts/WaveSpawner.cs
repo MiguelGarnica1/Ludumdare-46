@@ -65,6 +65,7 @@ public class WaveSpawner : MonoBehaviour
         {
             //Spawn Enemy randomly from the list of enemy
             SpawnEnemy(_wave.enemy[Random.Range(0, _wave.enemy.Length)]);
+            Debug.Log("num of enemies: "+numOfEnemy);
             yield return new WaitForSeconds(1f/_wave.rate);
         }
 
