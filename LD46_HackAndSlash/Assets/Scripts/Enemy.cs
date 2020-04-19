@@ -29,32 +29,10 @@ public abstract class Enemy : MonoBehaviour
         {
             moveTowardTarget(target);
         }
-        //TODO: Get and find the player to attack
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GetDamaged(damage);
-        }
-        if (health <= 0)
-        {
-            Die();
-        }
-        //TODO: When health reach 0, die
-        if (Input.GetKey(KeyCode.X))
-        {
-            Die();
-        }
 
-        if (isColorChanged)
+        if (Input.GetKey(KeyCode.Space))
         {
-            resetColorTime -= Time.deltaTime;
-            if (resetColorTime <= 0)
-            {
-                isColorChanged = false;
-                resetColorTime = 0.15f;
-                //Reset back to default color
-                SpriteRenderer sr = GetComponent<SpriteRenderer>();
-                sr.color = defaultColor;
-            }
+            Attack(damage);
         }
     }
 
