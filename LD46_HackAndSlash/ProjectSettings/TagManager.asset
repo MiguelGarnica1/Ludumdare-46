@@ -7,7 +7,6 @@ TagManager:
   - Generator
   - Wood
   - Enemy
-  - EnemyDrop
   layers:
   - Default
   - TransparentFX
