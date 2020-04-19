@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: 4b17c64caa78d3b419ae618a4401e02b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2784526692173332072
+    second: yass_0
+  - first:
+      213: 7646757305337163949
+    second: yass_1
+  - first:
+      213: 4717750239820977437
+    second: yass_2
+  - first:
+      213: 7748004926829273151
+    second: yass_3
+  - first:
+      213: 8152975345618770204
+    second: yass_4
+  - first:
+      213: 4624496282943636920
+    second: yass_5
+  - first:
+      213: -2102045156666154377
+    second: yass_6
+  - first:
+      213: -2914652266173970801
+    second: yass_7
+  - first:
+      213: 6868144431890297208
+    second: yass_8
+  - first:
+      213: -714930493215775427
+    second: yass_9
+  - first:
+      213: -3887553088662633448
+    second: yass_10
+  - first:
+      213: 6984917484084752093
+    second: yass_11
+  - first:
+      213: 4851191152065284176
+    second: yass_12
+  - first:
+      213: -5075727258066957990
+    second: yass_13
+  - first:
+      213: -1949593127638084583
+    second: yass_14
+  - first:
+      213: -3186861018375506290
+    second: yass_15
+  - first:
+      213: -136693365922746153
+    second: yass_16
+  - first:
+      213: -4284190623186980364
+    second: yass_17
+  - first:
+      213: -3560880462066345285
+    second: yass_18
+  - first:
+      213: 8783269594847637926
+    second: yass_19
+  - first:
+      213: -8638685580515925570
+    second: yass_20
+  - first:
+      213: 4907325737707723911
+    second: yass_21
+  - first:
+      213: -5154937724440554836
+    second: yass_22
+  - first:
+      213: -6356244698407298312
+    second: yass_23
+  - first:
+      213: 3223608443370415239
+    second: yass_24
+  - first:
+      213: -8510441311710284576
+    second: yass_25
+  - first:
+      213: -8045966124930015785
+    second: yass_26
+  - first:
+      213: -5762255584478460848
+    second: yass_27
+  - first:
+      213: 6265642864662173772
+    second: yass_28
+  - first:
+      213: -8732150292286748210
+    second: yass_29
+  - first:
+      213: -2672339925090699086
+    second: yass_30
+  - first:
+      213: 280599394669920608
+    second: yass_31
+  - first:
+      213: 639777348338776469
+    second: yass_32
+  - first:
+      213: -7064255274868724014
+    second: yass_33
+  - first:
+      213: -3960302974628421494
+    second: yass_34
+  - first:
+      213: -404672089494669254
+    second: yass_35
+  - first:
+      213: -1494050298882276332
+    second: yass_36
+  - first:
+      213: 8157446453321057248
+    second: yass_37
+  - first:
+      213: 2568064356082914449
+    second: yass_38
+  - first:
+      213: -5226138219947360435
+    second: yass_39
+  - first:
+      213: 1768955515051264034
+    second: yass_40
+  - first:
+      213: 877027909240519437
+    second: yass_41
+  - first:
+      213: -6340932057813812086
+    second: yass_42
+  - first:
+      213: -8040139107488167360
+    second: yass_43
+  - first:
+      213: -8024748085752956070
+    second: yass_44
+  - first:
+      213: -6407801206410889849
+    second: yass_45
+  - first:
+      213: 2725092987154176038
+    second: yass_46
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: yass_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 447
+        width: 62
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8914a6df9bf5b59d0800000000000000
+      internalID: -2784526692173332072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_1
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 436
+        width: 81
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0be34414dbe1a60800000000000000
+      internalID: 7646757305337163949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_2
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 434
+        width: 97
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d151b8fe8d0d87140800000000000000
+      internalID: 4717750239820977437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 307
+        width: 105
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30a2a52e61768b60800000000000000
+      internalID: 7748004926829273151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_4
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 308
+        width: 100
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19df1a61ef252170800000000000000
+      internalID: 8152975345618770204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_5
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 296
+        width: 120
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b548f12ed28d2040800000000000000
+      internalID: 4624496282943636920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_6
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 165
+        width: 100
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772651f211904d2e0800000000000000
+      internalID: -2102045156666154377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_7
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 166
+        width: 124
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86c9e6d4331d87d0800000000000000
+      internalID: -2914652266173970801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_8
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 167
+        width: 132
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 871f5e8c8fc805f50800000000000000
+      internalID: 6868144431890297208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_9
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 25
+        width: 139
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3567c8118e0416f0800000000000000
+      internalID: -714930493215775427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: yass_10
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 26
+        width: 139
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8148ac02013ac0ac0800000000000000
+      internalID: -3887553088662633448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
