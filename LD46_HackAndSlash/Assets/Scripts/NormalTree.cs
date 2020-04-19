@@ -21,6 +21,7 @@ public class NormalTree : Enemy
         health--;
     }
 
+   
     //Knockback
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -30,5 +31,6 @@ public class NormalTree : Enemy
             transform.position = new Vector2(transform.position.x + diff.x, transform.position.y + diff.y);
         }
     }
+
 
 }

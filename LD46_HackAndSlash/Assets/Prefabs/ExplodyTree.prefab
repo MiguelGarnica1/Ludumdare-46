@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1641397094}
   m_Layer: 0
   m_Name: ExplodyTree
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,8 +129,6 @@ MonoBehaviour:
   explodeEffect: {fileID: 6765983683638076782, guid: 6b5002ff4a5bd17418e0b890d268952d,
     type: 3}
   explodeCountDown: 2
-  thurst: 0
-  knockTime: 0
 --- !u!58 &1641397094
 CircleCollider2D:
   m_ObjectHideFlags: 0
