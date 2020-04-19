@@ -36,6 +36,7 @@ public class HackSlash : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 90));
 
 
+        
        
 
         // attack when button pressed
@@ -65,7 +66,8 @@ public class HackSlash : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Health>().Damage(attackDamage);
+            collision.gameObject.GetComponent<Enemy>().GetDamaged(attackDamage);
+            collision.gameObject.GetComponent<Enemy>().Knockback(this.transform);
         }
     }
 
