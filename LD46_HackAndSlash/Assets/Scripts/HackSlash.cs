@@ -8,6 +8,7 @@ public class HackSlash : MonoBehaviour
     public float attackDamage, attackRate;
 
     private bool isAttacking;
+    private float attackCounter;
     private BoxCollider2D bc;
     private Animator animator;
     
@@ -16,7 +17,7 @@ public class HackSlash : MonoBehaviour
     void Start()
     {
         bc = this.GetComponent<BoxCollider2D>();
-        bc.enabled = true;
+        bc.enabled = false;
 
         animator = GetComponent<Animator>();
     }
@@ -24,7 +25,7 @@ public class HackSlash : MonoBehaviour
     float timer;
     // Update is called once per frame
     void Update()
-    { 
+    {
         //Get the Screen positions of the object
         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
 
@@ -37,13 +38,35 @@ public class HackSlash : MonoBehaviour
         //Ta Daaa
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 90));
 
+        if (isAttacking)
+        {
+            attackCounter -= Time.deltaTime ;
+            if (attackCounter <= 0)
+            {
+                isAttacking = false;
+                bc.enabled = false;
+            }
+        }
 
         // attack when button pressed
-        if (Input.GetKeyDown(attack) && !isAttacking)
+        if (Input.GetKeyDown(attack))
         {
-            animator.SetTrigger("slash");
-            isAttacking = true;
-            bc.enabled = true;
+            Debug.Log("isAtacking: " + isAttacking);
+            if (!isAttacking)
+            {
+                attackCounter = attackRate;
+                isAttacking = true;
+                bc.enabled = true;
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Slash"))
+                {
+                    return;
+                }
+                else
+                {
+                    animator.SetTrigger("slash");
+                }
+            }
+            
         }
     }
 
@@ -52,20 +75,14 @@ public class HackSlash : MonoBehaviour
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Enemy") && isAttacking)
+        if (other.CompareTag("Enemy") && isAttacking)
         {
-            StartCoroutine(HitTimer(collision));
+            other.GetComponent<Enemy>().GetDamaged(attackDamage);
+            other.GetComponent<Enemy>().Knockback(this.transform);
         }
+        bc.enabled = false;
     }
 
-    IEnumerator HitTimer(Collider2D other)
-    {
-        other.GetComponent<Enemy>().GetDamaged(attackDamage);
-        other.GetComponent<Enemy>().Knockback(this.transform);
-        bc.enabled = false;
-        yield return new WaitForSeconds(attackRate);
-        isAttacking = false;
-    }
 }
