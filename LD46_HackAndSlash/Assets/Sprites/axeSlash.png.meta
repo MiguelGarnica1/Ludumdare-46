@@ -20,6 +20,18 @@ TextureImporter:
   - first:
       213: 21300010
     second: axeSlash_5
+  - first:
+      213: 2727377770384778908
+    second: axeSlash_0
+  - first:
+      213: 6605226889466035125
+    second: axeSlash_1
+  - first:
+      213: -8494801304017680459
+    second: axeSlash_2
+  - first:
+      213: -1751101761705948424
+    second: axeSlash_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -132,19 +144,19 @@ TextureImporter:
       name: axeSlash_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
-        width: 31
-        height: 64
+        x: 37
+        y: 27
+        width: 49
+        height: 34
       alignment: 9
-      pivot: {x: 0.6228878, y: 0.051820707}
+      pivot: {x: 0.027439585, y: 0.08477475}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f69da3d85b12bbba0800000000000000
-      internalID: 21300000
+      spriteID: c96e414c1a799d520800000000000000
+      internalID: 2727377770384778908
       vertices: []
       indices: 
       edges: []
@@ -153,19 +165,19 @@ TextureImporter:
       name: axeSlash_1
       rect:
         serializedVersion: 2
-        x: 74
-        y: 1
-        width: 48
-        height: 63
+        x: 131
+        y: 38
+        width: 75
+        height: 59
       alignment: 9
-      pivot: {x: 0.09850582, y: 0.037592836}
+      pivot: {x: 0.47310892, y: 0.013839333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 159f80604934aa180800000000000000
-      internalID: 21300002
+      spriteID: 5bb3b772cda7aab50800000000000000
+      internalID: 6605226889466035125
       vertices: []
       indices: 
       edges: []
@@ -174,82 +186,19 @@ TextureImporter:
       name: axeSlash_2
       rect:
         serializedVersion: 2
-        x: 126
-        y: 6
-        width: 65
-        height: 56
+        x: 264
+        y: 27
+        width: 96
+        height: 68
       alignment: 9
-      pivot: {x: 0.04492563, y: 0.083833456}
+      pivot: {x: 0.6540613, y: 0.20670621}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f3b850351945c2a0800000000000000
-      internalID: 21300004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: axeSlash_3
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 3
-        width: 67
-        height: 50
-      alignment: 9
-      pivot: {x: 0.045131627, y: 0.59411764}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61f547d910c9da8d0800000000000000
-      internalID: 21300006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: axeSlash_4
-      rect:
-        serializedVersion: 2
-        x: 267
-        y: 1
-        width: 51
-        height: 62
-      alignment: 9
-      pivot: {x: 0.87787646, y: 0.06266375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85d4b33d202d12b60800000000000000
-      internalID: 21300008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: axeSlash_5
-      rect:
-        serializedVersion: 2
-        x: 314
-        y: 10
-        width: 68
-        height: 51
-      alignment: 9
-      pivot: {x: 0.9481789, y: 0.09136602}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f7dd6375c056e780800000000000000
-      internalID: 21300010
+      spriteID: 5b7408ca8376c1a80800000000000000
+      internalID: -8494801304017680459
       vertices: []
       indices: 
       edges: []
