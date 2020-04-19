@@ -30,13 +30,13 @@ public class Wood : MonoBehaviour
         }
     }
 
+    public void collect()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-
         if (collision.gameObject.CompareTag("Generator"))
         {
             Destroy(gameObject);
