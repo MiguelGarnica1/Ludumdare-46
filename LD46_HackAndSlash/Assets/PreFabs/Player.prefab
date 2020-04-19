@@ -331,7 +331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7449992951643789891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7449992952731995124}
@@ -445,6 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: 0
+  limit: 4
   throwRate: 0.2
   dropPoint: {fileID: 7449992951643789888}
   woodPrefab: {fileID: 7783095943077492136, guid: 87dce6b2eb0da314298295b315bedc29,
