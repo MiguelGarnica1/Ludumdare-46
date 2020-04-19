@@ -14,6 +14,7 @@ public abstract class Enemy : MonoBehaviour
     protected Transform target;
     protected bool isColorChanged;
     protected float resetColorTime = .15f;
+    protected Color defaultColor;
 
     public abstract void Die();
     public abstract void Attack(float damage);
@@ -25,6 +26,7 @@ public abstract class Enemy : MonoBehaviour
     public virtual void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        defaultColor = GetComponent<SpriteRenderer>().color;
     }
 
     public virtual void Update()
@@ -54,7 +56,7 @@ public abstract class Enemy : MonoBehaviour
                 resetColorTime = 0.15f;
                 //Reset back to default color
                 SpriteRenderer sr = GetComponent<SpriteRenderer>();
-                sr.color = new Color(1f, 0, 1f, .7f);
+                sr.color = defaultColor;
             }
         }
     }

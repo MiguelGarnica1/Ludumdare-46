@@ -9,7 +9,12 @@ public class ExplodyTree : Enemy
 
     private bool playerWithinRange = false;
     private bool dead;
-    
+    private SpriteRenderer baseColor;
+    public override void Start()
+    {
+        base.Start();
+        baseColor = GetComponent<SpriteRenderer>();
+    }
 
     public override void Update()
     {
@@ -17,6 +22,7 @@ public class ExplodyTree : Enemy
         if (dead)
         {
             explodeCountDown -= Time.deltaTime;
+            baseColor.color = Color.Lerp(defaultColor, Color.red, Mathf.PingPong(Time.time, 1));
             if (explodeCountDown <= 0)
             {
                 Explode();
