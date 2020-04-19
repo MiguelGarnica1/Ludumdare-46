@@ -20,8 +20,6 @@ public abstract class Enemy : MonoBehaviour
     public abstract void Attack(float damage);
     public abstract void GetDamaged(float damage);
 
-    
-
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -74,7 +72,6 @@ public abstract class Enemy : MonoBehaviour
         Vector2 diff = transform.position - other.position;
         transform.position = new Vector2(transform.position.x + diff.x, transform.position.y + diff.y);
     }
-
 
     /*
      * Turn Red when it is attacked
