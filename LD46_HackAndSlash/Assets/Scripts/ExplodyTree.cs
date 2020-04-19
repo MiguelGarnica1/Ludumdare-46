@@ -44,6 +44,7 @@ public class ExplodyTree : Enemy
     public override void GetDamaged(float damage)
     {
         ChangeColor();
+        health--;
     }
 
     void Explode()

@@ -121,7 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5ba3b470fff914c97ebe470ce402e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 6
   moveSpeed: 1
-  damage: 0
+  damage: 2
   stoppingPoint: 0
+  miniTree: {fileID: 7938044885007966281, guid: c399df584b4365648a289d8af7ac7261,
+    type: 3}
+  minCount: 3
+  maxCount: 6

@@ -18,6 +18,7 @@ public class NormalTree : Enemy
     public override void GetDamaged(float damage)
     {
         ChangeColor();
+        health--;
     }
 
     //Knockback
