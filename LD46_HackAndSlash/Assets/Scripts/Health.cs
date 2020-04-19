@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
 
     public void Damage(float damage)
     {
-        hp -= damage;   
+        hp -= damage;
     }
 
 

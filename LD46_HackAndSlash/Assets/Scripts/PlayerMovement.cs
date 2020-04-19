@@ -1,29 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
-    public KeyCode left, right, up, down;
-    private Animator animator;
+    public KeyCode left, right, up, down;    
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();    
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        int totalSpeed =  Math.Abs(Convert.ToInt32(rb.velocity.x + rb.velocity.y));
-        // assign animator to player velocity
-        animator.SetInteger("speed", totalSpeed);
 
         if (Input.GetKey(left))
         {

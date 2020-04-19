@@ -36,7 +36,6 @@ public class HackSlash : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 90));
 
 
-        
        
 
         // attack when button pressed
