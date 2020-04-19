@@ -129,6 +129,8 @@ MonoBehaviour:
   explodeEffect: {fileID: 6765983683638076782, guid: 6b5002ff4a5bd17418e0b890d268952d,
     type: 3}
   explodeCountDown: 2
+  woodPrefab: {fileID: 22283456775384634, guid: 65ce81807d314a04d9debc7c8407fd8b,
+    type: 3}
 --- !u!58 &1641397094
 CircleCollider2D:
   m_ObjectHideFlags: 0

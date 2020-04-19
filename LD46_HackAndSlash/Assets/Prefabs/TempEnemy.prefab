@@ -99,6 +99,8 @@ MonoBehaviour:
   moveSpeed: 2
   damage: 2
   stoppingPoint: 0.3
+  woodPrefab: {fileID: 22283456775384634, guid: 65ce81807d314a04d9debc7c8407fd8b,
+    type: 3}
 --- !u!61 &554046640133859159
 BoxCollider2D:
   m_ObjectHideFlags: 0
