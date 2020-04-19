@@ -5,6 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public int inventory;
+    public int limit;
     public float throwRate;
     public Transform dropPoint;
     public GameObject woodPrefab;
@@ -29,9 +30,18 @@ public class Inventory : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wood"))
+        if (collision.gameObject.CompareTag("Wood") && inventory < limit)
         {
             inventory++;
+            var col = collision.gameObject.GetComponent<Wood>();
+            col.collect();
+        }
+
+        if (collision.gameObject.CompareTag("EnemyDrop") && inventory < limit)
+        {
+            inventory++;
+            var col = collision.gameObject.GetComponent<EnemyDrop>();
+            col.collect();
         }
     }
 }
