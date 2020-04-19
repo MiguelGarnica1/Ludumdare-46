@@ -65,7 +65,8 @@ public class HackSlash : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Health>().Damage(attackDamage);
+            collision.gameObject.GetComponent<Enemy>().GetDamaged(attackDamage);
+            collision.gameObject.GetComponent<Enemy>().Knockback(this.transform);
         }
     }
 
