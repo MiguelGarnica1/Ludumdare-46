@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MiniTree : Enemy
 {
+    public GameObject woodPrefab;
+
     public override void Attack(float damage)
     {
         throw new System.NotImplementedException();
@@ -12,6 +14,7 @@ public class MiniTree : Enemy
     public override void Die()
     {
         WaveSpawner.numOfEnemy--;
+        Instantiate(woodPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

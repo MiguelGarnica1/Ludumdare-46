@@ -6,6 +6,8 @@ public class ExplodyTree : Enemy
 {
     public Transform explodeEffect;
     public float explodeCountDown;
+    public GameObject woodPrefab;
+
 
     private bool playerWithinRange = false;
     private bool dead;
@@ -55,6 +57,7 @@ public class ExplodyTree : Enemy
         }
         Transform clone = Instantiate(explodeEffect, transform.position, transform.rotation);
         Destroy(clone.gameObject, 1f);
+        Instantiate(woodPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
         WaveSpawner.numOfEnemy--;
     }
