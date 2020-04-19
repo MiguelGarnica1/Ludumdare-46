@@ -35,11 +35,14 @@ public abstract class Enemy : MonoBehaviour
         {
             moveTowardTarget(target);
         }
-
         //TODO: Get and find the player to attack
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GetDamaged(damage);
+        }
+        if (health <= 0)
+        {
+            Die();
         }
         //TODO: When health reach 0, die
         if (Input.GetKey(KeyCode.X))

@@ -12,11 +12,13 @@ public class MiniTree : Enemy
     public override void Die()
     {
         WaveSpawner.numOfEnemy--;
+        Destroy(gameObject);
     }
 
     public override void GetDamaged(float damage)
     {
         ChangeColor();
+        health--;
     }
 
     //Knockback

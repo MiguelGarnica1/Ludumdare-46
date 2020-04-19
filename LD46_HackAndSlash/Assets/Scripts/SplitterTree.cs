@@ -18,14 +18,15 @@ public class SplitterTree : Enemy
 
     public override void Die()
     {
-        WaveSpawner.numOfEnemy--;
         Spawn();
+        WaveSpawner.numOfEnemy--;
         Destroy(gameObject);
     }
 
     public override void GetDamaged(float damage)
     {
         ChangeColor();
+        health--;
     }
 
     public void Spawn()
