@@ -5,7 +5,7 @@ using UnityEngine;
 public class SplitterTree : Enemy
 {
     public GameObject miniTree;
-
+    public GameObject woodPrefab;
     [SerializeField]
     private int minCount = 3;
     [SerializeField]
@@ -21,6 +21,11 @@ public class SplitterTree : Enemy
     {
         Spawn();
         WaveSpawner.numOfEnemy--;
+        float oneIn2 = Random.Range(1, 3);
+        if (oneIn2 == 1)
+        {
+            Instantiate(woodPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 

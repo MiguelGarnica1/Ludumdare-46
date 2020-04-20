@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class RampageController : MonoBehaviour
 {
-    public enum RampageState {powerUp, counting}
+    public enum RampageState {powerUp, counting, none, waiting}
 
     public static float rampageMultiplier = 0.0f;
-    public static int rampageCounter = 0;
+    public static float rampageCounter = 0;
+    public Animation resetRamp;
 
     public Slider rampageFillUp;
 
@@ -17,52 +18,74 @@ public class RampageController : MonoBehaviour
     private Transform axe;
     [SerializeField]
     private TextMeshProUGUI rampMultiText;
-    
+
     [SerializeField]
-    private RampageState rampageState = RampageState.counting;
+    private static RampageState rampageState = RampageState.counting;
     private static float rampageResetCounter = 5f;
-    private int rampageMultiUpperLimit;
+    private float rampageMultiUpperLimit;
+    private Transform player;
     private bool rampageIncrease;
     private Animator rampageAnimation;
     // Start is called before the first frame update
     void Start()
     {
-        rampageResetCounter = 5f;
-        rampageMultiUpperLimit = 10;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        rampageResetCounter = 3f;
+        rampageMultiUpperLimit = 5;
         rampageAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rampMultiText.text = rampageMultiplier.ToString() + "x";
-        rampageFillUp.value = (float)rampageCounter / rampageMultiUpperLimit;
-        if (rampageResetCounter <= 0)
-        {
-            rampageMultiplier = 0;
-            rampageMultiUpperLimit = 10;
-            axe.GetComponent<HackSlash>().attackDamage = 5f;
-            axe.GetComponent<HackSlash>().attackRate = 1f;
-        }
-
         if (rampageCounter >= rampageMultiUpperLimit)
         {
             rampageState = RampageState.powerUp;
+            rampageAnimation.SetBool("RampageBar", false);
             rampageCounter = 0;
         }
+
+        if (rampageCounter > 0 && rampageState != RampageState.powerUp)
+        {
+            rampageResetCounter -= Time.deltaTime;
+            rampageAnimation.SetBool("RampageBar", false);
+            if (rampageResetCounter <= 0)
+            {
+                rampageState = RampageState.counting;
+            }
+        }
+        else if(rampageCounter < 0 && rampageState != RampageState.powerUp)
+        {
+            rampageCounter = 0;
+            rampageResetCounter = 3f;
+            rampageAnimation.SetBool("RampageBar", false);
+            rampageState = RampageState.none;
+        }
+
+        
+        rampMultiText.text = rampageMultiplier.ToString() + "x";
         switch (rampageState)
         {
+            case RampageState.none:
+                axe.GetComponent<HackSlash>().attackDamage = 5f;
+                axe.GetComponent<HackSlash>().attackRate = 1f;
+                rampageMultiplier = 0;
+                rampageAnimation.SetBool("RampageOn", false);
+                rampageMultiUpperLimit = 10;
+                break;
             case RampageState.counting:
-                rampageResetCounter -= Time.deltaTime;
+                rampageCounter -= Time.deltaTime;
+                rampageAnimation.SetBool("RampageBar", true);
                 break;
             case RampageState.powerUp:
                 rampageIncrease = true;
-                rampageAnimation.SetTrigger("RampageOn");
+                rampageAnimation.SetBool("RampageOn", true);
                 rampageMultiplier += 0.1f;
                 rampageMultiUpperLimit *= 2;
-                rampageState = RampageState.counting;
+                rampageState = RampageState.waiting;
                 break;
         }
+        rampageFillUp.value = rampageCounter / rampageMultiUpperLimit;
 
         if (rampageIncrease)
         {
@@ -72,7 +95,8 @@ public class RampageController : MonoBehaviour
 
     public static void resetCounter()
     {
-        rampageResetCounter = 5f;
+        rampageResetCounter = 3f;
+        rampageState = RampageState.waiting;
     }
 
     void rampagePowerUp()
@@ -81,7 +105,11 @@ public class RampageController : MonoBehaviour
         if (axe.GetComponent<HackSlash>().attackRate > 0.1f) //MAX AT 0.1
         {
             float tempSpeed = axe.GetComponent<HackSlash>().attackRate;
-            axe.GetComponent<HackSlash>().attackRate -= tempSpeed * rampageMultiplier;
+            axe.GetComponent<HackSlash>().attackRate += tempSpeed * rampageMultiplier;
+        }
+        if (rampageMultiUpperLimit > 20)
+        {
+            player.GetComponent<PlayerMovement>().speed++;
         }
         rampageIncrease = false;
     }
