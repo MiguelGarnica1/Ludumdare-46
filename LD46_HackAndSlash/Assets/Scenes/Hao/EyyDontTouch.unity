@@ -2127,14 +2127,14 @@ MonoBehaviour:
   - {fileID: 77228174}
   state: 2
   waves:
-  - name: Yeet
+  - name: Wave 1
     enemy:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
     - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
     count: 10
     rate: 2
-  - name: TryHard
+  - name: ' Wave 2'
     enemy:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
