@@ -7,6 +7,12 @@ public class Generator : MonoBehaviour
     public int fuel;
     public int burnRate;
     private float timer;
+    private Component[] pr;
+
+    void Start()
+    {
+        pr = GetComponentsInChildren<ParticleSystem>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,6 +24,16 @@ public class Generator : MonoBehaviour
             fuel--;
             timer = 0;
         }
+
+        if (fuel == 0)
+        {
+            empty();
+        }
+    }
+
+    public void empty()
+    {
+        //add action here
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,6 +41,11 @@ public class Generator : MonoBehaviour
         if (collision.gameObject.CompareTag("Wood"))
         {
             fuel++;
+
+            foreach (ParticleSystem particleSys in pr)
+            {
+                particleSys.Play();
+            }
         }
     }
 }
