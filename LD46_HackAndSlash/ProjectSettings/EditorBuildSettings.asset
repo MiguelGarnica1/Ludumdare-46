@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Miguel.unity
     guid: 807656b6257529f40ac3577fdec0bdc5
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 9dd3ef418be2bd94399379243061892b
   m_configObjects: {}
