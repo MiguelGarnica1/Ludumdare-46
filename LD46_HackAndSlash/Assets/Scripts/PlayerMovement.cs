@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
         {
             this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + 1.5f);
         }
-        else if (this.transform.position.y > 10.35f )
+        else if (this.transform.position.y > 10.3f )
         {
             this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - 1.5f);
         }
@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
         {
             this.transform.position = new Vector2(this.transform.position.x + 1.5f, this.transform.position.y);
         }
-        else if (this.transform.position.x > 10.5)
+        else if (this.transform.position.x > 10.45f)
         {
             this.transform.position = new Vector2(this.transform.position.x - 1.5f, this.transform.position.y);
         }

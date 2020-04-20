@@ -545,7 +545,6 @@ MonoBehaviour:
   rampageFillUp: {fileID: 653015984}
   axe: {fileID: 0}
   rampMultiText: {fileID: 7597553333408627748}
-  rampageState: 1
 --- !u!1 &7597553333294047906
 GameObject:
   m_ObjectHideFlags: 0
