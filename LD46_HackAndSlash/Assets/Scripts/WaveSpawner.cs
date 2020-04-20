@@ -19,7 +19,7 @@ public class WaveSpawner : MonoBehaviour
     public SpawnState state = SpawnState.COUNTING;
     public Wave[] waves; 
     public static int numOfEnemy; //The total number of enemy   
-    private int currentWave; //The current wave level
+    public int currentWave; //The current wave level
 
     public float timeBetweenWaves = 5f;
     public float waveCountDown;
