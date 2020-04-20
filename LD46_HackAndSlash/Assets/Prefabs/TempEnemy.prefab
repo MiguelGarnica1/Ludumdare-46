@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b0b63d0f712c5684ba698ee81625a23f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5660378, g: 0.5526878, b: 0.5526878, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   stoppingPoint: 0.3
   woodPrefab: {fileID: 22283456775384634, guid: 65ce81807d314a04d9debc7c8407fd8b,
     type: 3}
+  attackDamage: 5
 --- !u!61 &554046640133859159
 BoxCollider2D:
   m_ObjectHideFlags: 0
