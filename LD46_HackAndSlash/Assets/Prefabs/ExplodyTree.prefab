@@ -131,6 +131,7 @@ MonoBehaviour:
   explodeCountDown: 2
   woodPrefab: {fileID: 22283456775384634, guid: 65ce81807d314a04d9debc7c8407fd8b,
     type: 3}
+  attackDamage: 10
 --- !u!58 &1641397094
 CircleCollider2D:
   m_ObjectHideFlags: 0

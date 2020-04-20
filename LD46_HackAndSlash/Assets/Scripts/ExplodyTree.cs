@@ -8,6 +8,7 @@ public class ExplodyTree : Enemy
     public float explodeCountDown;
     public GameObject woodPrefab;
 
+    public float attackDamage;
 
     private bool playerWithinRange = false;
     private bool dead;
@@ -62,6 +63,8 @@ public class ExplodyTree : Enemy
         WaveSpawner.numOfEnemy--;
     }
 
+
+
     //Check if player within explosion radius
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -77,6 +80,14 @@ public class ExplodyTree : Enemy
         {
             playerWithinRange = false;
             Debug.Log("Player Nah!");
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Health>().Damage(attackDamage);
         }
     }
 }

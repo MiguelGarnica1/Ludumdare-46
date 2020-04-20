@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,22 +11,46 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public KeyCode left, right, up, down;
     private Animator animator;
+    private AudioSource audioSource;
+
+    private Health health;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        int totalSpeed =  Math.Abs(Convert.ToInt32(rb.velocity.x + rb.velocity.y));
-        // assign animator to player velocity
+        // animation and sfx
+        int totalSpeed =  Convert.ToInt32(Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.y));
         animator.SetInteger("speed", totalSpeed);
 
+        if (totalSpeed > 0 && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+
+        }
+        
+        if(totalSpeed < 0)
+        {
+            audioSource.Stop();
+        }
+
+        /// check for death
+        
+        if(health.GetHealth() <= 0)
+        {
+            SceneManager.LoadScene("Dead");
+        }
+
+        /// movement 
         if (Input.GetKey(left))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
@@ -51,5 +77,22 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
 
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Knockback(collision.transform);
+        }
+    }
+
+    public void Knockback(Transform other)
+    {
+        Vector2 diff = this.transform.position - other.position;
+        diff *= 0.5f;
+
+        this.transform.position = new Vector2(this.transform.position.x + diff.x, this.transform.position.y + diff.y);
     }
 }

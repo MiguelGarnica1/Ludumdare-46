@@ -129,3 +129,4 @@ MonoBehaviour:
     type: 3}
   minCount: 3
   maxCount: 6
+  attackDamage: 10

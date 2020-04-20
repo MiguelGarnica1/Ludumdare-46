@@ -10,6 +10,7 @@ public class SplitterTree : Enemy
     private int minCount = 3;
     [SerializeField]
     private int maxCount = 6;
+    public float attackDamage;
 
     public override void Attack(float damage)
     {
@@ -36,6 +37,14 @@ public class SplitterTree : Enemy
         {
             Instantiate(miniTree, this.transform.position + new Vector3(Random.Range(-0.5f,0.5f), Random.Range(-0.5f, 0.5f), 0), Quaternion.identity);
             WaveSpawner.numOfEnemy++;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Health>().Damage(attackDamage);
         }
     }
 }
