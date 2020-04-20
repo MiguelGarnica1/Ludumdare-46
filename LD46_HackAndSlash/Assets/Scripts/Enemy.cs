@@ -29,6 +29,7 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void Update()
     {
+
         if (Vector2.Distance(transform.position, target.position) > stoppingPoint)
         {
             moveTowardTarget(target);
@@ -38,14 +39,12 @@ public abstract class Enemy : MonoBehaviour
         {
             GetDamaged(damage);
         }
-        if (health <= 0)
-        {
-            Die();
-        }
+        
         //TODO: When health reach 0, die
         if (Input.GetKey(KeyCode.X))
         {
             Die();
+            RampageController.resetCounter();
         }
 
         if (isColorChanged)
@@ -69,8 +68,8 @@ public abstract class Enemy : MonoBehaviour
 
     public void Knockback(Transform other)
     {
-        Vector2 diff = transform.position - other.position;
-        transform.position = new Vector2(transform.position.x + diff.x, transform.position.y + diff.y);
+         Vector2 diff = transform.position - other.position;
+        transform.position = new Vector2(transform.position.x + diff.x, transform.position.y + diff.y );
     }
 
     /*
@@ -81,6 +80,5 @@ public abstract class Enemy : MonoBehaviour
         isColorChanged = true;
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(1f, 0, 0, .7f);
-
     }
 }

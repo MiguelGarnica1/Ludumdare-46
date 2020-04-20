@@ -27,7 +27,13 @@ public class SplitterTree : Enemy
     public override void GetDamaged(float damage)
     {
         ChangeColor();
-        health--;
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+            RampageController.rampageCounter++;
+            RampageController.resetCounter();
+        }
     }
 
     public void Spawn()

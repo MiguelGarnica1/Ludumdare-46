@@ -13,8 +13,10 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private AudioSource audioSource;
 
+    private bool isKnockback;
+    private float knockBackRate = 0.25f; //Time when the player can be knock back again
     private Health health;
-
+    private bool isWalking;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,18 +29,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isKnockback)
+        {
+            knockBackRate -= Time.deltaTime;
+            if (knockBackRate <= 0)
+            {
+                isKnockback = false;
+            }
+        }
 
         // animation and sfx
         int totalSpeed =  Convert.ToInt32(Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.y));
         animator.SetInteger("speed", totalSpeed);
 
-        if (totalSpeed > 0 && !audioSource.isPlaying)
+        if (isWalking && !audioSource.isPlaying)
         {
             audioSource.Play();
 
         }
         
-        if(totalSpeed < 0)
+        if(!isWalking)
         {
             audioSource.Stop();
         }
@@ -54,23 +64,28 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(left))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+            isWalking = true;
         }
         else if(Input.GetKey(right))
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
+            isWalking = true;
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+            isWalking = false;
         }
 
         if (Input.GetKey(up))
         {
             rb.velocity = new Vector2(rb.velocity.x, speed);
+            isWalking = true;
         }
         else if (Input.GetKey(down))
         {
             rb.velocity = new Vector2(rb.velocity.x, -speed);
+            isWalking = true;
         }
         else
         {
@@ -82,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && !isKnockback)
         {
             Knockback(collision.transform);
         }
@@ -90,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Knockback(Transform other)
     {
+        isKnockback = true;
         Vector2 diff = this.transform.position - other.position;
         diff *= 0.5f;
 
