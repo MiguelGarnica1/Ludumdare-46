@@ -452,6 +452,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 3569517794529323926}
+    - target: {fileID: 2751849529459003341, guid: 7acb1135409e1e2408e4b74d1f93c27c,
+        type: 3}
+      propertyPath: attackDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751849529459003341, guid: 7acb1135409e1e2408e4b74d1f93c27c,
+        type: 3}
+      propertyPath: attackRate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2793660506878981218, guid: 7acb1135409e1e2408e4b74d1f93c27c,
         type: 3}
       propertyPath: m_Name
@@ -885,6 +895,18 @@ PrefabInstance:
     - target: {fileID: 422721636, guid: 5241ffb19d85aac4a8b0d2f08a51a8db, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422721637, guid: 5241ffb19d85aac4a8b0d2f08a51a8db, type: 3}
+      propertyPath: m_Color.r
+      value: 0.48732984
+      objectReference: {fileID: 0}
+    - target: {fileID: 422721637, guid: 5241ffb19d85aac4a8b0d2f08a51a8db, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 422721637, guid: 5241ffb19d85aac4a8b0d2f08a51a8db, type: 3}
+      propertyPath: m_Color.b
+      value: 0.14925243
       objectReference: {fileID: 0}
     - target: {fileID: 7597553332748296707, guid: 5241ffb19d85aac4a8b0d2f08a51a8db,
         type: 3}
@@ -1521,7 +1543,35 @@ MonoBehaviour:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     count: 100
-    rate: 2
+    rate: 1
+  - name: Wave 1
+    enemy:
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    count: 100
+    rate: 1
+  - name: Wave 1
+    enemy:
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    count: 100
+    rate: 1
+  - name: Wave 1
+    enemy:
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    count: 100
+    rate: 1
+  - name: Wave 1
+    enemy:
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    count: 100
+    rate: 1
   currentWave: 0
   timeBetweenWaves: 3
   waveCountDown: 0
@@ -1723,6 +1773,16 @@ PrefabInstance:
     - target: {fileID: 7449992952731995124, guid: 455676c490c23cf47ad5b2046dadbfa5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449992952731995126, guid: 455676c490c23cf47ad5b2046dadbfa5,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449992952731995126, guid: 455676c490c23cf47ad5b2046dadbfa5,
+        type: 3}
+      propertyPath: m_UsedByEffector
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

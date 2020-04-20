@@ -58,7 +58,7 @@ public class HackSlash : MonoBehaviour
 
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(attack))
+            if (Input.GetKeyDown(attack))   
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
