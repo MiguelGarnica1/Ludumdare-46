@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1591688467}
   - component: {fileID: 1591688469}
   - component: {fileID: 3711875915312377949}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SplitterTree
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2413389960938624119}
   - component: {fileID: 1641397094}
   - component: {fileID: -5142393672364896156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ExplodyTree
   m_TagString: Enemy
   m_Icon: {fileID: 0}

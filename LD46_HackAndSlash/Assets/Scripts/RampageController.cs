@@ -83,7 +83,7 @@ public class RampageController : MonoBehaviour
         if (axe.GetComponent<HackSlash>().attackRate > 0.1f) //MAX AT 0.1
         {
             float tempSpeed = axe.GetComponent<HackSlash>().attackRate;
-            axe.GetComponent<HackSlash>().attackRate -= tempSpeed * rampageMultiplier;
+            axe.GetComponent<HackSlash>().attackRate += tempSpeed * rampageMultiplier;
         }
         rampageIncrease = false;
     }

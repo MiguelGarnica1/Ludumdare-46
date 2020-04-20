@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 412834808}
   - component: {fileID: 412834809}
   - component: {fileID: 6331853166098843166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MiniTree
   m_TagString: Enemy
   m_Icon: {fileID: 0}
