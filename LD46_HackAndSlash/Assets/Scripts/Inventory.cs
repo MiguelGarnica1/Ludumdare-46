@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class Inventory : MonoBehaviour
     public GameObject woodPrefab;
     public KeyCode drop;
     private float timer;
+    public TextMeshProUGUI inventoryText;
+
+    void Start()
+    {
+        inventoryText.text = inventory + "/" + limit;
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,24 +29,36 @@ public class Inventory : MonoBehaviour
             if (inventory >= 1)
             {
                 Instantiate(woodPrefab, dropPoint.position, Quaternion.identity);
-                inventory--;
+                substract();
                 timer = 0;
             }
         }
+    }
+
+    void substract()
+    {
+        inventory--;
+        inventoryText.text = inventory + "/" + limit;
+    }
+
+    void add()
+    {
+        inventory++;
+        inventoryText.text = inventory + "/" + limit;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wood") && inventory < limit)
         {
-            inventory++;
+            add();
             var col = collision.gameObject.GetComponent<Wood>();
             col.collect();
         }
 
         if (collision.gameObject.CompareTag("EnemyDrop") && inventory < limit)
         {
-            inventory++;
+            add();
             var col = collision.gameObject.GetComponent<EnemyDrop>();
             col.collect();
         }
