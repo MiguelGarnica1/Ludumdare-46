@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -94,7 +95,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (currentWave + 1 > waves.Length - 1)
         {
-            currentWave = 0;
+            SceneManager.LoadScene("Win");
         }
         else
         {

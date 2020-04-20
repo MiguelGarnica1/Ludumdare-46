@@ -28,6 +28,6 @@ public class Menu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Miguel");
+        SceneManager.LoadScene("EyyDontTouch");
     }
 }

@@ -30,7 +30,7 @@ public abstract class Enemy : MonoBehaviour
         defaultColor = GetComponent<SpriteRenderer>().color;
 
         audioSource = GetComponent<AudioSource>();
-        delay = Random.Range(3f, 10f);
+        delay = Random.Range(2f, 4f);
  
     }
 
@@ -38,6 +38,17 @@ public abstract class Enemy : MonoBehaviour
     int timesPlayed = 0;
     public virtual void Update()
     {
+        timer += Time.deltaTime;
+        if (timer > delay)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.pitch = Random.Range(-2f, 2f);
+                audioSource.Play();
+                delay = Random.Range(2f, 4f);
+                timer = 0;
+            }
+        }
 
         if (Vector2.Distance(transform.position, target.position) > stoppingPoint)
         {

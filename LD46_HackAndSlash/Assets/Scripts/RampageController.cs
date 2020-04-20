@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RampageController : MonoBehaviour
 {
@@ -10,32 +11,35 @@ public class RampageController : MonoBehaviour
     public static float rampageMultiplier = 0.0f;
     public static int rampageCounter = 0;
 
+    public Slider rampageFillUp;
+
     [SerializeField]
     private Transform axe;
     [SerializeField]
     private TextMeshProUGUI rampMultiText;
-    [SerializeField]
-    private TextMeshProUGUI rampCounter;
+    
     [SerializeField]
     private RampageState rampageState = RampageState.counting;
     private static float rampageResetCounter = 5f;
     private int rampageMultiUpperLimit;
     private bool rampageIncrease;
-
+    private Animator rampageAnimation;
     // Start is called before the first frame update
     void Start()
     {
         rampageResetCounter = 5f;
         rampageMultiUpperLimit = 10;
+        rampageAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         rampMultiText.text = rampageMultiplier.ToString() + "x";
+        rampageFillUp.value = (float)rampageCounter / rampageMultiUpperLimit;
         if (rampageResetCounter <= 0)
         {
-            rampageMultiplier = 0f;
+            rampageMultiplier = 0;
             rampageMultiUpperLimit = 10;
             axe.GetComponent<HackSlash>().attackDamage = 5f;
             axe.GetComponent<HackSlash>().attackRate = 1f;
@@ -50,10 +54,10 @@ public class RampageController : MonoBehaviour
         {
             case RampageState.counting:
                 rampageResetCounter -= Time.deltaTime;
-                rampCounter.text = rampageResetCounter.ToString() + ", " + rampageCounter;
                 break;
             case RampageState.powerUp:
                 rampageIncrease = true;
+                rampageAnimation.SetTrigger("RampageOn");
                 rampageMultiplier += 0.1f;
                 rampageMultiUpperLimit *= 2;
                 rampageState = RampageState.counting;
@@ -81,4 +85,5 @@ public class RampageController : MonoBehaviour
         }
         rampageIncrease = false;
     }
+
 }

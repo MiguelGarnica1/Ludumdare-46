@@ -53,18 +53,13 @@ public class HackSlash : MonoBehaviour
         // attack when button pressed
         if (Input.GetKeyDown(attack))
         {
-
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
-
             Debug.Log("isAtacking: " + isAttacking);
             if (!isAttacking)
             {
                 attackCounter = attackRate;
                 isAttacking = true;
                 bc.enabled = true;
+                audioSource.Play();
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName("Slash"))
                 {
                     return;

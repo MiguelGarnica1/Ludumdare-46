@@ -15,7 +15,17 @@ public class CameraExtensions : MonoBehaviour
 
     public bool isFollowing;
 
-
+    [SerializeField]
+    private float xMin;
+    [SerializeField]
+    private float xMax;
+    [SerializeField]
+    private float yMin;
+    [SerializeField]
+    private float yMax;
+    [SerializeField]
+    private float offset;
+    Vector3 velocity = Vector3.zero;
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -24,55 +34,19 @@ public class CameraExtensions : MonoBehaviour
 
     void Start()
     {
-        min = cameraBounds.bounds.min;
-        max = cameraBounds.bounds.max;
-        isFollowing = true;
-        mainCamera = GetComponent<Camera>();
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        var x = transform.position.x;
-        var y = transform.position.y;
+        Vector3 targetPos = player.transform.position;
 
-        if (isFollowing)
-        {
-            if (Mathf.Abs(x - player.position.x) > margin.x)
-                x = Mathf.Lerp(x, player.position.x, smoothing.x * Time.deltaTime);
+        this.transform.position = Vector3.SmoothDamp(this.transform.position, targetPos, ref velocity, 0.15f);
 
-            if (Mathf.Abs(y - player.position.y) > margin.y)
-                y = Mathf.Lerp(y, player.position.y, smoothing.y * Time.deltaTime);
-        }
 
-        // ortographicSize is the haldf of the height of the Camera.
-        var cameraHalfWidth = mainCamera.orthographicSize * ((float)Screen.width / Screen.height);
+        this.transform.position = new Vector3(Mathf.Clamp(this.transform.position.x, xMin, xMax),
+            Mathf.Clamp(this.transform.position.y, yMin, yMax),
+            transform.position.z - offset);
 
-        x = Mathf.Clamp(x, min.x + cameraHalfWidth, max.x - cameraHalfWidth);
-        y = Mathf.Clamp(y, min.y + mainCamera.orthographicSize, max.y - mainCamera.orthographicSize);
-
-        transform.position = new Vector3(x, y, transform.position.z);
-    }
-
-    // PixelPerfectScript.
-    public static float RoundToNearestPixel(float unityUnits, Camera viewingCamera)
-    {
-        float valueInPixels = (Screen.height / (viewingCamera.orthographicSize * 2)) * unityUnits;
-        valueInPixels = Mathf.Round(valueInPixels);
-        float adjustedUnityUnits = valueInPixels / (Screen.height / (viewingCamera.orthographicSize * 2));
-        return adjustedUnityUnits;
-    }
-
-    void LateUpdate()
-    {
-        Vector3 newPos = transform.position;
-        Vector3 roundPos = new Vector3(RoundToNearestPixel(newPos.x, mainCamera), RoundToNearestPixel(newPos.y, mainCamera), newPos.z);
-        transform.position = roundPos;
-    }
-
-    public void UpdateBounds()
-    {
-        min = cameraBounds.bounds.min;
-        max = cameraBounds.bounds.max;
     }
 }

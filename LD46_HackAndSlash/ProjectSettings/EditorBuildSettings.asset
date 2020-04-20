@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 9dd3ef418be2bd94399379243061892b
+  - enabled: 1
+    path: Assets/Scenes/NoFuel.unity
+    guid: a6696c50b4758474ea111fa3d0ea3cf2
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 8415b471e7a414246a677e5b468cca87
+  - enabled: 1
+    path: Assets/Scenes/Hao/EyyDontTouch.unity
+    guid: 4256bcc423b414d4daa0d6783a668609
   m_configObjects: {}
