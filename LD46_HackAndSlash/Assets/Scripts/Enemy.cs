@@ -10,7 +10,8 @@ public abstract class Enemy : MonoBehaviour
 
     [SerializeField]
     protected float stoppingPoint;
-
+    [SerializeField]
+    protected Transform bleed;
     protected Transform target;
     protected bool isColorChanged;
     protected float resetColorTime = .15f;
@@ -20,12 +21,15 @@ public abstract class Enemy : MonoBehaviour
     public abstract void Attack(float damage);
     public abstract void GetDamaged(float damage);
 
+
     protected AudioSource audioSource;
     float timer, delay = 5;
     public AudioClip[] clips;
     // Start is called before the first frame update
     public virtual void Start()
     {
+        ParticleSystem.EmissionModule em = bleed.GetComponent<ParticleSystem>().emission;
+        em.enabled = false;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         defaultColor = GetComponent<SpriteRenderer>().color;
 
@@ -104,7 +108,17 @@ public abstract class Enemy : MonoBehaviour
 
     public void Knockback(Transform other)
     {
-         Vector2 diff = transform.position - other.position;
+        ParticleSystem.EmissionModule em = bleed.GetComponent<ParticleSystem>().emission;
+        em.enabled = true;
+        StartCoroutine(stopBleed());
+        if (this.transform.name == "ExplodyTree")
+        {
+            if (GetComponent<ExplodyTree>().dead == true)
+            {
+                return;
+            }
+        }
+        Vector2 diff = transform.position - other.position;
         transform.position = new Vector2(transform.position.x + diff.x, transform.position.y + diff.y );
     }
 
@@ -116,5 +130,12 @@ public abstract class Enemy : MonoBehaviour
         isColorChanged = true;
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(1f, 0, 0, .7f);
+    }
+
+    IEnumerator stopBleed()
+    {
+        yield return new WaitForSeconds(.1f);
+        ParticleSystem.EmissionModule em = bleed.GetComponent<ParticleSystem>().emission;
+        em.enabled = false;
     }
 }

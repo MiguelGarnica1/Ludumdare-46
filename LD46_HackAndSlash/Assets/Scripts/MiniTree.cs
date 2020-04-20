@@ -15,7 +15,11 @@ public class MiniTree : Enemy
     public override void Die()
     {
         WaveSpawner.numOfEnemy--;
-        Instantiate(woodPrefab, transform.position, Quaternion.identity);
+        float oneIn2 = Random.Range(1, 3);
+        if (oneIn2 == 2)
+        {
+            Instantiate(woodPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 

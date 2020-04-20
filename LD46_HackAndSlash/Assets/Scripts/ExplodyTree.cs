@@ -11,7 +11,7 @@ public class ExplodyTree : Enemy
     public float attackDamage;
 
     private bool playerWithinRange = false;
-    private bool dead;
+    public bool dead;
     private SpriteRenderer baseColor;
     public override void Start()
     {
@@ -65,7 +65,11 @@ public class ExplodyTree : Enemy
         }
         Transform clone = Instantiate(explodeEffect, transform.position, transform.rotation);
         Destroy(clone.gameObject, 1f);
-        Instantiate(woodPrefab, transform.position, Quaternion.identity);
+        float oneIn4 = Random.Range(1, 5);
+        if (oneIn4 == 1)
+        {
+            Instantiate(woodPrefab, transform.position, Quaternion.identity);
+        }
         WaveSpawner.numOfEnemy--;
         Destroy(gameObject); 
     }

@@ -9,7 +9,11 @@ public class NormalTree : Enemy
 
     public override void Die()
     {
-        Instantiate(woodPrefab, transform.position, Quaternion.identity);
+        float oneIn4 = Random.Range(1, 5);
+        if (oneIn4 == 1)
+        {
+            Instantiate(woodPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
         WaveSpawner.numOfEnemy--;
     }
