@@ -68,7 +68,7 @@ public class RampageController : MonoBehaviour
         {
             case RampageState.none:
                 axe.GetComponent<HackSlash>().attackDamage = 5f;
-                axe.GetComponent<HackSlash>().attackRate = 1f;
+                axe.GetComponent<HackSlash>().attackRate = 1.5f;
                 rampageMultiplier = 0;
                 rampageAnimation.SetBool("RampageOn", false);
                 rampageMultiUpperLimit = 10;

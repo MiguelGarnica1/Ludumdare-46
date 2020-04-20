@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (isKnockback)
         {
             knockBackRate -= Time.deltaTime;
@@ -110,5 +111,23 @@ public class PlayerMovement : MonoBehaviour
         diff *= 0.5f;
 
         this.transform.position = new Vector2(this.transform.position.x + diff.x, this.transform.position.y + diff.y);
+
+        if (this.transform.position.y < -10.05f)
+        {
+            this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + 1.5f);
+        }
+        else if (this.transform.position.y > 10.35f )
+        {
+            this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - 1.5f);
+        }
+
+        if (this.transform.position.x < -9.9f)
+        {
+            this.transform.position = new Vector2(this.transform.position.x + 1.5f, this.transform.position.y);
+        }
+        else if (this.transform.position.x > 10.5)
+        {
+            this.transform.position = new Vector2(this.transform.position.x - 1.5f, this.transform.position.y);
+        }
     }
 }
