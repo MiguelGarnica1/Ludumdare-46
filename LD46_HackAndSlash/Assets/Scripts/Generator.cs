@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Generator : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class Generator : MonoBehaviour
 
     public void empty()
     {
-        //add action here
+        SceneManager.LoadScene("NoFuel");
     }
 
     public void fill()
