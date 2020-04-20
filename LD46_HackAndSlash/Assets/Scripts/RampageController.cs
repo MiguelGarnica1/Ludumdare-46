@@ -10,6 +10,7 @@ public class RampageController : MonoBehaviour
 
     public static float rampageMultiplier = 0.0f;
     public static int rampageCounter = 0;
+    public Animation resetRamp;
 
     public Slider rampageFillUp;
 
@@ -35,21 +36,22 @@ public class RampageController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rampMultiText.text = rampageMultiplier.ToString() + "x";
-        rampageFillUp.value = (float)rampageCounter / rampageMultiUpperLimit;
         if (rampageResetCounter <= 0)
         {
             rampageMultiplier = 0;
+            rampageAnimation.SetBool("RampageOn", false);
             rampageMultiUpperLimit = 10;
             axe.GetComponent<HackSlash>().attackDamage = 5f;
             axe.GetComponent<HackSlash>().attackRate = 1f;
         }
-
+        rampMultiText.text = rampageMultiplier.ToString() + "x";
+        
         if (rampageCounter >= rampageMultiUpperLimit)
         {
             rampageState = RampageState.powerUp;
             rampageCounter = 0;
         }
+        rampageFillUp.value = (float)rampageCounter / rampageMultiUpperLimit;
         switch (rampageState)
         {
             case RampageState.counting:
@@ -57,7 +59,7 @@ public class RampageController : MonoBehaviour
                 break;
             case RampageState.powerUp:
                 rampageIncrease = true;
-                rampageAnimation.SetTrigger("RampageOn");
+                rampageAnimation.SetBool("RampageOn", true);
                 rampageMultiplier += 0.1f;
                 rampageMultiUpperLimit *= 2;
                 rampageState = RampageState.counting;
