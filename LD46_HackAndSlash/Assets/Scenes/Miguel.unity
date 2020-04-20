@@ -1751,6 +1751,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7449992952731995127, guid: 455676c490c23cf47ad5b2046dadbfa5,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9212837559895266521, guid: 455676c490c23cf47ad5b2046dadbfa5,
         type: 3}
       propertyPath: attackRate
