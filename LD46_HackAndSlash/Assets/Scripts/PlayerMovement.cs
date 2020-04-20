@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
         
-        if(totalSpeed < 0)
+        if(totalSpeed < 1)
         {
             audioSource.Stop();
         }
