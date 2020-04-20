@@ -1518,37 +1518,9 @@ MonoBehaviour:
   - name: Wave 1
     enemy:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
-    - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
-    - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
-    count: 10
-    rate: 2
-  - name: ' Wave 2'
-    enemy:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
-    - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
-    - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
-    count: 10
-    rate: 2
-  - name: TryHard
-    enemy:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
-    - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
-    - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
-    count: 10
-    rate: 2
-  - name: TryHard
-    enemy:
-    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
-    - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
-    - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
-    count: 10
-    rate: 2
-  - name: TryHard
-    enemy:
-    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
-    - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
-    - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
-    count: 10
+    count: 100
     rate: 2
   currentWave: 0
   timeBetweenWaves: 3
@@ -1577,102 +1549,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6263038803156017254}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &3569517794529323929
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3569517794529323926}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f023cae05d07df6449ad71eabb11285e, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 0
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 1
-  BypassReverbZones: 1
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.002
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0.99892426
-      inSlope: -0.06272382
-      outSlope: -0.06272382
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.19144933
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &5523909939821658665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1784,25 +1660,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5238623276726615303, guid: 455676c490c23cf47ad5b2046dadbfa5,
-        type: 3}
-      propertyPath: max_health
-      value: 100000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6058914792529316011, guid: 455676c490c23cf47ad5b2046dadbfa5,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 3569517794529323926}
-    - target: {fileID: 6263038802487856986, guid: 455676c490c23cf47ad5b2046dadbfa5,
-        type: 3}
-      propertyPath: orthographic size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7449992952731995120, guid: 455676c490c23cf47ad5b2046dadbfa5,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449992952731995121, guid: 455676c490c23cf47ad5b2046dadbfa5,
+        type: 3}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7449992952731995124, guid: 455676c490c23cf47ad5b2046dadbfa5,
         type: 3}
@@ -1859,25 +1725,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7449992952731995124, guid: 455676c490c23cf47ad5b2046dadbfa5,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449992952731995124, guid: 455676c490c23cf47ad5b2046dadbfa5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9212837559895266521, guid: 455676c490c23cf47ad5b2046dadbfa5,
-        type: 3}
-      propertyPath: attackRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9212837559895266521, guid: 455676c490c23cf47ad5b2046dadbfa5,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 3569517794529323926}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 455676c490c23cf47ad5b2046dadbfa5, type: 3}

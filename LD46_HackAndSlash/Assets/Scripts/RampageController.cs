@@ -23,11 +23,13 @@ public class RampageController : MonoBehaviour
     private RampageState rampageState = RampageState.counting;
     private static float rampageResetCounter = 5f;
     private int rampageMultiUpperLimit;
+    private Transform player;
     private bool rampageIncrease;
     private Animator rampageAnimation;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rampageResetCounter = 5f;
         rampageMultiUpperLimit = 10;
         rampageAnimation = GetComponent<Animator>();
@@ -84,6 +86,10 @@ public class RampageController : MonoBehaviour
         {
             float tempSpeed = axe.GetComponent<HackSlash>().attackRate;
             axe.GetComponent<HackSlash>().attackRate += tempSpeed * rampageMultiplier;
+        }
+        if (rampageMultiUpperLimit > 20)
+        {
+            player.GetComponent<PlayerMovement>().speed++;
         }
         rampageIncrease = false;
     }

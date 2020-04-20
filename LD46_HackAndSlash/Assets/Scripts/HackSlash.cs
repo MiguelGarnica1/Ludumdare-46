@@ -82,7 +82,7 @@ public class HackSlash : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().GetDamaged(attackDamage);
-            enemy.GetComponent<Enemy>().Knockback(this.transform);
+            enemy.GetComponent<Enemy>().Knockback(player.transform);
 
         }
     }

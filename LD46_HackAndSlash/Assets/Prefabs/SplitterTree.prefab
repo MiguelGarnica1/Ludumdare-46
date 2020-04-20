@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5ba3b470fff914c97ebe470ce402e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 6
+  health: 100
   moveSpeed: 1
   damage: 2
   stoppingPoint: 0
@@ -130,6 +130,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5ab72d2f95ab5424fb122d5a678e69b0, type: 3}
   - {fileID: 8300000, guid: 1e40412842de50446bc4853fdf158edb, type: 3}
   miniTree: {fileID: 7938044885007966281, guid: c399df584b4365648a289d8af7ac7261,
+    type: 3}
+  woodPrefab: {fileID: 22283456775384634, guid: 65ce81807d314a04d9debc7c8407fd8b,
     type: 3}
   minCount: 3
   maxCount: 6
