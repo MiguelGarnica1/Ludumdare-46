@@ -25,7 +25,7 @@ public class ExplodyTree : Enemy
         if (dead)
         {
             explodeCountDown -= Time.deltaTime;
-            baseColor.color = Color.Lerp(defaultColor, Color.red, Mathf.PingPong(Time.time, 1));
+            baseColor.color = Color.Lerp(defaultColor, Color.black, Mathf.PingPong(Time.time, 1));
             if (explodeCountDown <= 0)
             {
                 Explode();
@@ -47,7 +47,13 @@ public class ExplodyTree : Enemy
     public override void GetDamaged(float damage)
     {
         ChangeColor();
-        health--;
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+            RampageController.rampageCounter++;
+            RampageController.resetCounter();
+        }
     }
 
     void Explode()

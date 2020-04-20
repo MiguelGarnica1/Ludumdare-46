@@ -38,17 +38,6 @@ public abstract class Enemy : MonoBehaviour
     int timesPlayed = 0;
     public virtual void Update()
     {
-        timer += Time.deltaTime;
-        if(timer > delay)
-        {
-            if (!audioSource.isPlaying)
-            {
-                audioSource.pitch = Random.Range(-2f, 2f);
-                audioSource.Play();
-                delay = Random.Range(3f, 7f);
-                timer = 0;
-            }
-        }
 
         if (Vector2.Distance(transform.position, target.position) > stoppingPoint)
         {
@@ -80,6 +69,7 @@ public abstract class Enemy : MonoBehaviour
         if (Input.GetKey(KeyCode.X))
         {
             Die();
+            RampageController.resetCounter();
         }
 
         if (isColorChanged)
@@ -103,8 +93,8 @@ public abstract class Enemy : MonoBehaviour
 
     public void Knockback(Transform other)
     {
-        Vector2 diff = transform.position - other.position;
-        transform.position = new Vector2(transform.position.x + diff.x, transform.position.y + diff.y);
+         Vector2 diff = transform.position - other.position;
+        transform.position = new Vector2(transform.position.x + diff.x, transform.position.y + diff.y );
     }
 
     /*
@@ -115,6 +105,5 @@ public abstract class Enemy : MonoBehaviour
         isColorChanged = true;
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(1f, 0, 0, .7f);
-
     }
 }

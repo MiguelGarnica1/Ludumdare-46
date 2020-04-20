@@ -22,7 +22,13 @@ public class MiniTree : Enemy
     public override void GetDamaged(float damage)
     {
         ChangeColor();
-        health--;
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+            RampageController.rampageCounter++;
+            RampageController.resetCounter();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
