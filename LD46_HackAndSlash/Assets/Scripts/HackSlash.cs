@@ -11,7 +11,8 @@ public class HackSlash : MonoBehaviour
     private float attackCounter;
     private BoxCollider2D bc;
     private Animator animator;
-    
+
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class HackSlash : MonoBehaviour
         bc.enabled = false;
 
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     float timer;
@@ -51,6 +53,12 @@ public class HackSlash : MonoBehaviour
         // attack when button pressed
         if (Input.GetKeyDown(attack))
         {
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+
             Debug.Log("isAtacking: " + isAttacking);
             if (!isAttacking)
             {

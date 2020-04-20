@@ -20,13 +20,22 @@ public abstract class Enemy : MonoBehaviour
     public abstract void Attack(float damage);
     public abstract void GetDamaged(float damage);
 
+    protected AudioSource audioSource;
+    float timer, delay = 5;
+    public AudioClip[] clips;
     // Start is called before the first frame update
     public virtual void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         defaultColor = GetComponent<SpriteRenderer>().color;
+
+        audioSource = GetComponent<AudioSource>();
+        delay = Random.Range(3f, 10f);
+ 
     }
 
+    float dietimer = 0;
+    int timesPlayed = 0;
     public virtual void Update()
     {
 
@@ -39,7 +48,23 @@ public abstract class Enemy : MonoBehaviour
         {
             GetDamaged(damage);
         }
-        
+        if (health <= 0)
+        {
+            audioSource.pitch = 1;
+            if (!audioSource.isPlaying && timesPlayed < 1)
+            {
+                audioSource.PlayOneShot(clips[1], 0.5f);
+                timesPlayed++;
+            }
+            dietimer += Time.deltaTime;
+
+            if(dietimer > 0.5f)
+            {
+                Die();
+                dietimer = 0;
+            }
+           
+        }
         //TODO: When health reach 0, die
         if (Input.GetKey(KeyCode.X))
         {
