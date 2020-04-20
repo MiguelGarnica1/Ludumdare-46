@@ -41,6 +41,7 @@ public class ExplodyTree : Enemy
     public override void Die()
     {
         dead = true;
+        
         moveSpeed = 0;
     }
 
@@ -48,7 +49,7 @@ public class ExplodyTree : Enemy
     {
         ChangeColor();
         health -= damage;
-        if (health <= 0)
+        if (health <= 0 && !dead)
         {
             Die();
             RampageController.rampageCounter++;
@@ -65,8 +66,8 @@ public class ExplodyTree : Enemy
         Transform clone = Instantiate(explodeEffect, transform.position, transform.rotation);
         Destroy(clone.gameObject, 1f);
         Instantiate(woodPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
         WaveSpawner.numOfEnemy--;
+        Destroy(gameObject); 
     }
 
 
