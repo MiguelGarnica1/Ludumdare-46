@@ -541,6 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34909b302051232468f920a94dd577c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetRamp: {fileID: 0}
   rampageFillUp: {fileID: 653015984}
   axe: {fileID: 0}
   rampMultiText: {fileID: 7597553333408627748}
