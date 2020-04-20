@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -13,20 +13,23 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private AudioSource audioSource;
 
+    private Health health;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        // animation and sfx
         int totalSpeed =  Convert.ToInt32(Math.Abs(rb.velocity.x) + Math.Abs(rb.velocity.y));
-        // assign animator to player velocity
         animator.SetInteger("speed", totalSpeed);
 
         if (totalSpeed > 0 && !audioSource.isPlaying)
@@ -40,6 +43,14 @@ public class PlayerMovement : MonoBehaviour
             audioSource.Stop();
         }
 
+        /// check for death
+        
+        if(health.GetHealth() <= 0)
+        {
+            SceneManager.LoadScene("Dead");
+        }
+
+        /// movement 
         if (Input.GetKey(left))
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
