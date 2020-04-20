@@ -5,7 +5,7 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     public int fuel;
-    public int burnRate;
+    public float burnRate;
     private float timer;
     private Component[] pr;
 
