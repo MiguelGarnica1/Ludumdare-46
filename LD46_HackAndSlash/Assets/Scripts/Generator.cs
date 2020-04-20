@@ -5,7 +5,7 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     public int fuel;
-    public int burnRate;
+    public float burnRate;
     private float timer;
     private Component[] pr;
 
@@ -27,6 +27,7 @@ public class Generator : MonoBehaviour
 
         if (fuel == 0)
         {
+            fuel = -1;
             empty();
         }
     }
@@ -36,16 +37,26 @@ public class Generator : MonoBehaviour
         //add action here
     }
 
+    public void fill()
+    {
+        fuel++;
+
+        foreach (ParticleSystem particleSys in pr)
+        {
+            particleSys.Play();
+        }
+    }
+
+    public void editBurnRate(float rate)
+    {
+        burnRate = rate;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wood"))
         {
-            fuel++;
-
-            foreach (ParticleSystem particleSys in pr)
-            {
-                particleSys.Play();
-            }
+            fill(); 
         }
     }
 }
