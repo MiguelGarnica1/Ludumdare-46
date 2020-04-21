@@ -34,7 +34,6 @@ public class RampageController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rampageResetCounter = 3f;
-        rampageMultiUpperLimit = 2;
         rampageAnimation = GetComponent<Animator>();
     }
 
@@ -75,6 +74,7 @@ public class RampageController : MonoBehaviour
             case RampageState.none:
                 axe.GetComponent<HackSlash>().attackDamage = 5f;
                 axe.GetComponent<HackSlash>().attackRate = 1.5f;
+                rampageMultiUpperLimit = 10f;
                 rampageMultiplier = 0;
                 rampageAnimation.SetBool("RampageOn", false);
                 break;

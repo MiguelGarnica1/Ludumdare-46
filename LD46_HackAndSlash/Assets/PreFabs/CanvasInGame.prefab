@@ -1056,7 +1056,7 @@ MonoBehaviour:
   rampageFillUp: {fileID: 402900148888638637}
   axe: {fileID: 0}
   rampMultiText: {fileID: 402900147383313129}
-  rampageMultiUpperLimit: 5
+  rampageMultiUpperLimit: 10
   barAnim: {fileID: 264757934}
 --- !u!95 &402900148532818242
 Animator:

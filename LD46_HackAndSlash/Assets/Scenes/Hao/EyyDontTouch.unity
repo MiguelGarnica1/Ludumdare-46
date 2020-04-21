@@ -914,35 +914,53 @@ MonoBehaviour:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
-    count: 100
-    rate: 1
+    count: 25
+    rate: 0.5
   - name: Wave 2
     enemy:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
-    count: 100
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
+    count: 50
     rate: 1
   - name: Wave 3
     enemy:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
     count: 100
     rate: 1
   - name: Wave 4
     enemy:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
+    - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
+    - {fileID: 2713147887557485844, guid: c399df584b4365648a289d8af7ac7261, type: 3}
+    - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
-    count: 100
+    count: 200
     rate: 1
   - name: Wave 5 FINAL
     enemy:
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
     - {fileID: 7965612766703480944, guid: 10e368da1a04a454f99ececce3e3ccc1, type: 3}
-    count: 100
+    - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
+    - {fileID: 6227521494860373677, guid: c65b2ca5d6e850b4e8e8b3e8490a1e89, type: 3}
+    - {fileID: 2713147887557485844, guid: c399df584b4365648a289d8af7ac7261, type: 3}
+    - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
+    - {fileID: 5624107309858184526, guid: 18c3d9a7153d30c459d84f67c63bd597, type: 3}
+    count: 350
     rate: 1
   currentWave: 0
   timeBetweenWaves: 3
@@ -992,6 +1010,11 @@ PrefabInstance:
       propertyPath: axe
       value: 
       objectReference: {fileID: 1665499972}
+    - target: {fileID: 402900148532818241, guid: c894e0e2f1fc2f54bbb717e8c0ce2ea8,
+        type: 3}
+      propertyPath: rampageMultiUpperLimit
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 402900148532818243, guid: c894e0e2f1fc2f54bbb717e8c0ce2ea8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1221,6 +1244,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5238623276726615303, guid: 455676c490c23cf47ad5b2046dadbfa5,
+        type: 3}
+      propertyPath: max_health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7449992952731995120, guid: 455676c490c23cf47ad5b2046dadbfa5,
         type: 3}
       propertyPath: m_Name
