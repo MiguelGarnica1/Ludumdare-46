@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class Generator : MonoBehaviour
 {
     public int fuel;
+    public Transform fire;
     public float burnRate;
+
+    private float scaleMax = 10f;
     private float timer;
     private Component[] pr;
 
@@ -24,6 +27,11 @@ public class Generator : MonoBehaviour
         {
             fuel--;
             timer = 0;
+        }
+
+        if (fuel < 10)
+        {
+            fire.localScale = new Vector3(fuel/scaleMax, fuel / scaleMax, 1f);
         }
 
         if (fuel == 0)
