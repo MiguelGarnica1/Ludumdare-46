@@ -4850,7 +4850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4ca885be93a2040ba10021294c9bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuel: 15
+  fuel: 1000
+  fire: {fileID: 0}
   burnRate: 2.5
 --- !u!1 &3840736753604189910
 GameObject:

@@ -4878,7 +4878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  moveSpeed: 1
+  moveSpeed: 0.5
   damage: 2
   stoppingPoint: 0
   bleed: {fileID: 951967285}

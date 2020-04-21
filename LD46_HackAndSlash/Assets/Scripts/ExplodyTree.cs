@@ -62,6 +62,7 @@ public class ExplodyTree : Enemy
         if (playerWithinRange)
         {
             Debug.Log("Explosion hit player!");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().Damage(5f);
         }
         Transform clone = Instantiate(explodeEffect, transform.position, transform.rotation);
         Destroy(clone.gameObject, 1f);
