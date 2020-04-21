@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 323
   attackDamage: 5
-  attackRate: 0.1
+  attackRate: 1
   attackRange: 0.84
   enemyLayer:
     serializedVersion: 2
